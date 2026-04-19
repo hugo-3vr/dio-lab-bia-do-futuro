@@ -1,0 +1,8 @@
+data,descricao,categoria,valor,tipo,status
+2026-05-05,Venda de Mercadorias,Receita,12000.0,entrada,concluido
+2026-05-10,Pagamento Fornecedor A,Insumos,8000.0,saida,concluido
+2026-05-15,Folha de Pagamento Maio,RH,25000.0,saida,agendado
+2026-05-15,Aluguel Galpão,Infra,5000.0,saida,agendado
+2026-05-20,Manutenção Maquinário,Operacional,3000.0,saida,agendado
+2026-05-25,Recebimento Cartões de Crédito,Receita,45000.0,entrada,previsto
+2026-05-28,Faturamento Nota Fiscal 402,Receita,15000.0,entrada,previsto

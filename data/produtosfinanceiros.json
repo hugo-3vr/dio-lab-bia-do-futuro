@@ -1,0 +1,23 @@
+[
+    {
+        "nome": "Antecipação de Recebíveis Cartão",
+        "taxa_mensal": 0.0185,
+        "prazo_liberacao": "D+0",
+        "tipo": "Antecipação",
+        "descricao": "Antecipe as vendas de cartão de crédito que cairiam em 30 dias."
+    },
+    {
+        "nome": "Capital de Giro Parcelado",
+        "taxa_mensal": 0.035,
+        "prazo_liberacao": "D+2",
+        "tipo": "Empréstimo",
+        "descricao": "Crédito para fluxo de caixa com pagamento em até 24 meses."
+    },
+    {
+        "nome": "Cheque Especial PJ",
+        "taxa_mensal": 0.089,
+        "prazo_liberacao": "Imediato",
+        "tipo": "Crédito Rotativo",
+        "descricao": "Limite pré-aprovado para cobrir furos emergenciais no caixa."
+    }
+]
