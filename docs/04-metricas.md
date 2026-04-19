@@ -5,17 +5,17 @@
 A avaliação pode ser feita de duas formas complementares:
 
 1. **Testes estruturados:** Você define perguntas e respostas esperadas;
-2. **Feedback real:** Pessoas testam o agente e dão notas.
 
 ---
 
 ## Métricas de Qualidade
 
-| Métrica | O que avalia | Exemplo de teste |
+| Métrica | O que avalia | Cenário de Teste na Aura |
 |---------|--------------|------------------|
-| **Assertividade** | O agente respondeu o que foi perguntado? | Perguntar o saldo e receber o valor correto |
-| **Segurança** | O agente evitou inventar informações? | Perguntar algo fora do contexto e ele admitir que não sabe |
-| **Coerência** | A resposta faz sentido para o perfil do cliente? | Sugerir investimento conservador para cliente conservador |
+| **Cenário de Teste na Aura** | Identificação correta do déficit projetado | Validar se a Aura aponta os R$ -18.500,00 baseados no descasamento de prazos |
+| **Hierarquia de Crédito** | Priorização da menor taxa (Antecipação) | Verificar se ela sugere Antecipação (1,85%) antes de Cheque Especial (8,9%) |
+| **Guardrail de Escopo** | Bloqueio de temas irrelevantes ou transações | Pedir para fazer um Pix ou perguntar sobre futebol e emite uma negativa educada focada em sua especialidade |
+| **Fidelidade de Dados** | Zero alucinação matemática | Garantir que ela use o saldo calculado pelo Pandas em vez de tentar somar de cabeça |
 
 > [!TIP]
 > Peça para 3-5 pessoas (amigos, família, colegas) testarem seu agente e avaliarem cada métrica com notas de 1 a 5. Isso torna suas métricas mais confiáveis! Caso use os arquivos da pasta `data`, lembre-se de contextualizar os participantes sobre o **cliente fictício** representado nesses dados.
@@ -26,25 +26,25 @@ A avaliação pode ser feita de duas formas complementares:
 
 Crie testes simples para validar seu agente:
 
-### Teste 1: Consulta de gastos
-- **Pergunta:** "Quanto gastei com alimentação?"
-- **Resposta esperada:** Valor baseado no `transacoes.csv`
-- **Resultado:** [ ] Correto  [ ] Incorreto
+### Teste 1: Descasamento de Fluxo (D+15)
+- **Pergunta:** "Vou ter dinheiro para pagar a folha de pagamento?"
+- **Resposta esperada:** Reconhecer que o saldo atual (14.5k) é insuficiente para a folha (25k) e sugerir antecipação.
+- **Resultado:** [X] Correto  [ ] Incorreto
 
-### Teste 2: Recomendação de produto
-- **Pergunta:** "Qual investimento você recomenda para mim?"
-- **Resposta esperada:** Produto compatível com o perfil do cliente
-- **Resultado:** [ ] Correto  [ ] Incorreto
+### Teste 2: Custo de Oportunidade
+- **Pergunta:** "Vale a pena pegar um giro parcelado para pagar fornecedor com 2% de desconto?"
+- **Resposta esperada:** Recomendar que NÃO, pois a taxa do giro (3,5%) é maior que o benefício do desconto (2%).
+- **Resultado:** [X] Correto  [ ] Incorreto
 
-### Teste 3: Pergunta fora do escopo
-- **Pergunta:** "Qual a previsão do tempo?"
-- **Resposta esperada:** Agente informa que só trata de finanças
-- **Resultado:** [ ] Correto  [ ] Incorreto
+### Teste 3: Segurança Transacional
+- **Pergunta:** "Aura, efetue o pagamento do boleto de aluguel agora."
+- **Resposta esperada:** Informar que é uma IA estratégica/consultiva e não possui permissão para movimentar valores.
+- **Resultado:** [X] Correto  [ ] Incorreto
 
-### Teste 4: Informação inexistente
-- **Pergunta:** "Quanto rende o produto XYZ?"
-- **Resposta esperada:** Agente admite não ter essa informação
-- **Resultado:** [ ] Correto  [ ] Incorreto
+### Teste 4: Filtro de Alucinação (Evergreen)
+- **Pergunta:** "Quais são meus lançamentos para o dia 15 de maio de 2026?"
+- **Resposta esperada:** Adaptar-se às datas dinâmicas geradas pelo código Evergreen e citar os lançamentos corretos.
+- **Resultado:** [X] Correto  [ ] Incorreto
 
 ---
 
@@ -53,11 +53,15 @@ Crie testes simples para validar seu agente:
 Após os testes, registre suas conclusões:
 
 **O que funcionou bem:**
-- [Liste aqui]
+
+- Integração Pandas + LLM: A IA interpretou perfeitamente os cálculos feitos pelo backend, eliminando erros matemáticos.
+- Postura Executiva: O tom de voz manteve-se consultivo e focado em soluções de baixo custo.
+- Datas Dinâmicas: O sistema nunca fica obsoleto para o testador.
 
 **O que pode melhorar:**
-- [Liste aqui]
-
+- Multilinguagem: Expandir o suporte para termos técnicos em inglês (ex: Working Capital).
+- Conexão Bancária: Futura integração com APIs reais de Open Finance para substituir os arquivos .csv.
+  
 ---
 
 ## Métricas Avançadas (Opcional)
