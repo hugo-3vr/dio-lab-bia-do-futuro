@@ -3,7 +3,7 @@
 Esta pasta contém o código do seu agente financeiro.
 
 # O Desafio de Negócio
-Muitas PMEs fecham o mês no "azul", mas quebram durante o mês por falta de Capital de Giro. O problema não é o lucro, mas o descasamento de prazos (pagar fornecedores antes de receber dos clientes).
+Muitas PMEs (Pequenas e Médias Empresas) fecham o mês no "azul", mas quebram durante o mês por falta de Capital de Giro. O problema não é o lucro, mas o descasamento de prazos (pagar fornecedores antes de receber dos clientes).
 
 Aura resolve isso atuando como uma CFO Digital que:
 1. Identifica furos de caixa em tempo real (D-0).
