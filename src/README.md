@@ -21,7 +21,6 @@ Aura resolve isso atuando como uma CFO Digital que:
 ├── src/
 │   ├── app.py                   # Interface Streamlit e Lógica de Negócio
 │   └── ...                      # Módulos de suporte
-├── requirements.txt             # Dependências do sistema
 ```
 
 ## Exemplo de requirements.txt
@@ -30,7 +29,6 @@ Aura resolve isso atuando como uma CFO Digital que:
 streamlit
 pandas
 requests
-ollama API
 ```
 
 ## Como Rodar
@@ -47,7 +45,7 @@ git clone https://github.com/seu-usuario/aura-bradesco.git
 cd aura-bradesco
 
 # Instale as dependências
-pip install -r requirements.txt
+pip install 'requirements'
 
 
 # Rodar a aplicação
