@@ -1,149 +1,42 @@
-# 🤖 Agente Financeiro Inteligente com IA Generativa
+# 🛡️ Aura Performance | CFO Digital Estrategista
 
-## Contexto
-
-Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
-
-- **Antecipar necessidades** ao invés de apenas responder perguntas
-- **Personalizar** sugestões com base no contexto de cada cliente
-- **Cocriar soluções** financeiras de forma consultiva
-- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
-
-> [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
+> **Desafio BIA do Futuro (DIO & Bradesco)**
+> Agente de Inteligência Artificial Generativa Local para Gestão Proativa de Capital de Giro em PMEs.
 
 ---
 
-## O Que Você Deve Entregar
+## 🎯 O Problema de Negócio
+A maior causa de mortalidade de PMEs no Brasil não é a falta de lucro, mas a **quebra do fluxo de caixa**. O fenômeno do "descasamento de prazos" (pagar fornecedores antes de receber de clientes) cria furos de liquidez que forçam o gestor a recorrer a créditos caros por falta de planejamento.
 
-### 1. Documentação do Agente
-
-Defina **o que** seu agente faz e **como** ele funciona:
-
-- **Caso de Uso:** Qual problema financeiro ele resolve? (ex: consultoria de investimentos, planejamento de metas, alertas de gastos)
-- **Persona e Tom de Voz:** Como o agente se comporta e se comunica?
-- **Arquitetura:** Fluxo de dados e integração com a base de conhecimento
-- **Segurança:** Como evitar alucinações e garantir respostas confiáveis?
-
-📄 **Template:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
+**A Aura Performance resolve isso atuando como um "Escudo de Margem":**
+1. **Identificação Preditiva:** Detecta déficits futuros antes mesmo do gestor abrir o extrato.
+2. **Análise de Custo de Capital:** Compara taxas de Antecipação vs. Empréstimos de forma determinística.
+3. **Execução Consultiva:** Sugere a estratégia de menor Custo Efetivo Total (CET) para proteger o lucro da operação.
 
 ---
 
-### 2. Base de Conhecimento
+## 🚀 Diferenciais de Engenharia
 
-Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alimentar seu agente:
+### 1. Privacy by Design (IA Local)
+Utilização do **Ollama** com o modelo `gpt-oss` rodando localmente. Isso garante que dados sensíveis de faturamento e movimentação bancária da empresa nunca saiam do perímetro de segurança local.
 
-| Arquivo | Formato | Descrição |
-|---------|---------|-----------|
-| `transacoes.csv` | CSV | Histórico de transações do cliente |
-| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
-| `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
-| `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
+### 2. Motor de Dados Evergreen
+Implementação de lógica em **Pandas** que realiza o *Time-Shifting* dinâmico dos dados. O sistema recalcula as datas de vencimento em relação ao tempo real, garantindo que o cenário de teste esteja sempre atualizado.
 
-Você pode adaptar ou expandir esses dados conforme seu caso de uso.
-
-📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
+### 3. Blindagem contra Alucinação (Guardrails)
+* **Cálculo Determinístico:** A IA é proibida de realizar contas. O backend em Python processa os números e injeta os resultados exatos no contexto.
+* **Restrição de Domínio:** Filtros de escopo impedem a IA de discorrer sobre temas irrelevantes (política, lazer), mantendo o foco 100% corporativo.
 
 ---
 
-### 3. Prompts do Agente
+## 🏗️ Arquitetura do Sistema
 
-Documente os prompts que definem o comportamento do seu agente:
-
-- **System Prompt:** Instruções gerais de comportamento e restrições
-- **Exemplos de Interação:** Cenários de uso com entrada e saída esperada
-- **Tratamento de Edge Cases:** Como o agente lida com situações limite
-
-📄 **Template:** [`docs/03-prompts.md`](./docs/03-prompts.md)
-
----
-
-### 4. Aplicação Funcional
-
-Desenvolva um **protótipo funcional** do seu agente:
-
-- Chatbot interativo (sugestão: Streamlit, Gradio ou similar)
-- Integração com LLM (via API ou modelo local)
-- Conexão com a base de conhecimento
-
-📁 **Pasta:** [`src/`](./src/)
-
----
-
-### 5. Avaliação e Métricas
-
-Descreva como você avalia a qualidade do seu agente:
-
-**Métricas Sugeridas:**
-- Precisão/assertividade das respostas
-- Taxa de respostas seguras (sem alucinações)
-- Coerência com o perfil do cliente
-
-📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
-
----
-
-### 6. Pitch
-
-Grave um **pitch de 3 minutos** (estilo elevador) apresentando:
-
-- Qual problema seu agente resolve?
-- Como ele funciona na prática?
-- Por que essa solução é inovadora?
-
-📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
-
----
-
-## Ferramentas Sugeridas
-
-Todas as ferramentas abaixo possuem versões gratuitas:
-
-| Categoria | Ferramentas |
-|-----------|-------------|
-| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
-| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
-| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
-| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
-
----
-
-## Estrutura do Repositório
-
-```
-📁 lab-agente-financeiro/
-│
-├── 📄 README.md
-│
-├── 📁 data/                          # Dados mockados para o agente
-│   ├── historico_atendimento.csv     # Histórico de atendimentos (CSV)
-│   ├── perfil_investidor.json        # Perfil do cliente (JSON)
-│   ├── produtos_financeiros.json     # Produtos disponíveis (JSON)
-│   └── transacoes.csv                # Histórico de transações (CSV)
-│
-├── 📁 docs/                          # Documentação do projeto
-│   ├── 01-documentacao-agente.md     # Caso de uso e arquitetura
-│   ├── 02-base-conhecimento.md       # Estratégia de dados
-│   ├── 03-prompts.md                 # Engenharia de prompts
-│   ├── 04-metricas.md                # Avaliação e métricas
-│   └── 05-pitch.md                   # Roteiro do pitch
-│
-├── 📁 src/                           # Código da aplicação
-│   └── app.py                        # (exemplo de estrutura)
-│
-├── 📁 assets/                        # Imagens e diagramas
-│   └── ...
-│
-└── 📁 examples/                      # Referências e exemplos
-    └── README.md
-```
-
----
-
-## Dicas Finais
-
-1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
-2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
-3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
-4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
-5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
+```mermaid
+flowchart TD
+    A[Gestor Financeiro] -->|Interação Natural| B[Interface Streamlit]
+    B -->|Processamento ETL| C[Pandas Engine]
+    C -->|Recálculo Evergreen| D[(Arquivos Corporativos CSV/JSON)]
+    C -->|Contexto Sanitizado| E[Injeção de Prompt]
+    E -->|IA Local / Ollama| F[LLM - gpt-oss]
+    F -->|Recomendação Estratégica| B
+    B -->|Visualização de Dados| A
