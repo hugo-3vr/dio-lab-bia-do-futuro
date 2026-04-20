@@ -49,13 +49,13 @@ Profissional e técnico, mas extremamente focado na clareza. Ele utiliza a termi
 
 ```mermaid
 flowchart TD
-    A[Gestor Financeiro] -->|Interação| B[Interface Streamlit]
-    B -->|Extração e Cálculo| C[Motor de Dados / Pandas]
-    C -->|Leitura| D[(Arquivos Locais: CSV / JSON)]
-    C -->|Resultados Exatos| B
-    B -->|Contexto + Prompts| E[API do LLM]
-    E -->|Resposta Estruturada| B
-    B -->|Exibição de Chat| A
+    A[Gestor Financeiro] -->|Interação Natural| B[Interface Streamlit]
+    B -->|Processamento ETL| C[Pandas Engine]
+    C -->|Recálculo Evergreen| D[(Arquivos Corporativos CSV/JSON)]
+    C -->|Contexto Sanitizado| E[Injeção de Prompt]
+    E -->|IA Local / Ollama| F[LLM - gpt-oss]
+    F -->|Recomendação Estratégica| B
+    B -->|Visualização de Dados| A
 ```
 
 ### Componentes
