@@ -59,4 +59,5 @@ Percepção Profissional: O projeto reflete a experiência do desenvolvedor em p
 
 > Cole aqui o link do seu pitch (YouTube, Loom, Google Drive, etc.)
 
-[Link do vídeo]
+[[Link do vídeo]
+](https://drive.google.com/file/d/1WYvIUrOBPoPZiKR31bzxlGHNcCBSarSN/view?usp=sharing)
